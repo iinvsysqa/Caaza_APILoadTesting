@@ -26,15 +26,23 @@ import java.util.List;
 
 
 // To do - Access denied - need to give other user token and get that response so do that after login operator and use his token 
-public class TC_01_AddUser extends API_WrapperClass{
+public class TC_01_AddUser extends Baseclass{
+
+			public TC_01_AddUser(String baseURL) {
+		super(baseURL);
+		// TODO Auto-generated constructor stub
+	}
+
 
 			A_RegisterUser register;
-	    
+			
   
     @Test(priority = 0)
     public void Add_User() throws Exception {
     	
-    	register =new A_RegisterUser(10);
+    	
+    	
+    	register =new A_RegisterUser(Integer.parseInt(loadProp("USERS")));
     	String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
     	ExtentReport.createdescription(methodName, "<b><I><h2>Sending request without role</h2></I></b>");
     	

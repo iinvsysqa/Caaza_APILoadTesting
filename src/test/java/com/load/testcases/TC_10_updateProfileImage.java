@@ -11,13 +11,18 @@ import com.testcases.Product.I_Getandsavescenes;
 import com.testcases.Product.J_updateProfileImage;
 
 import wrappers.API_WrapperClass;
+import wrappers.Baseclass;
 
-public class TC_10_updateProfileImage extends API_WrapperClass{
+public class TC_10_updateProfileImage extends Baseclass{
 	
 	
+	public TC_10_updateProfileImage(String baseURL) {
+		super(baseURL);
+		// TODO Auto-generated constructor stub
+	}
 	J_updateProfileImage updateprofileimg;
-@Test(priority = 5)
-public void serialEntry() {
+@Test(priority = 9)
+public void updateProfileImage() {
 
 	updateprofileimg= new J_updateProfileImage();
 	String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();

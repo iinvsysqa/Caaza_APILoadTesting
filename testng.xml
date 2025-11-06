@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <packages>
-      <package name="com.testcases"/>
+      <package name="com.load.testcases"/>
     </packages>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

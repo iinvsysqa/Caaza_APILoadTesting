@@ -3,14 +3,22 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.testcases.login">
+      <class name="com.load.testcases.TC_07_updatedevicename_switchname_scenes">
         <methods>
-          <include name="Login"/>
+          <include name="updatedevicename_switchname_scenes"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.testcases.login -->
+      </class> <!-- com.load.testcases.TC_07_updatedevicename_switchname_scenes -->
+      <class name="com.load.testcases.TC_06_Add_device">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="Add_Device"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.load.testcases.TC_06_Add_device -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -9,16 +9,22 @@ import com.testcases.Product.B_CreateHeaderHierarchy;
 import com.testcases.Product.E_serialEntry;
 
 import wrappers.API_WrapperClass;
+import wrappers.Baseclass;
 
-public class TC_06_Add_device extends API_WrapperClass{
+public class TC_06_Add_device extends Baseclass{
 
+	public TC_06_Add_device(String baseURL) {
+		super(baseURL);
+		// TODO Auto-generated constructor stub
+	}
 	F_Adddevice adddevice;
-@Test(priority = 6)
+@Test(priority = 5)
 public void Add_Device() throws Exception {
 String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 ExtentReport.createdescription(methodName, "<b><I><h2>Sending request to Add device </h2></I></b>");
 
-adddevice = new F_Adddevice(1);
+adddevice = new F_Adddevice(Integer.parseInt(loadProp("DEVICES")));
+System.out.println();
 
 adddevice.addDevicesForEachLocation();
 }

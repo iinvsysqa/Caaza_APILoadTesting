@@ -9,7 +9,13 @@ import com.api.utils.reporter.ExtentLogger;
 import static org.testng.Assert.assertEquals;
 
 import java.awt.Font;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
+import java.util.Properties;
 
 import com.resources.*;
 
@@ -147,6 +153,31 @@ public class Baseclass extends API_WrapperClass {
             ExtentLogger.fail("DELETE request failed: " + e.getMessage());
         }
         return response;
+    }
+    public static String loadProp(String property) {
+		Properties prop = new Properties();
+		try {
+			prop.load(new FileInputStream(new File("./config.properties")));
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return prop.getProperty(property);
+	}
+	public static void updateProperty( String key, String newValue) throws IOException {
+        Properties props = new Properties();
+        try (FileInputStream in = new FileInputStream("./config.properties")) {
+            props.load(in);
+        }
+
+        // Update the value
+        props.setProperty(key, newValue);
+
+        try (FileOutputStream out = new FileOutputStream("./config.properties")) {
+            props.store(out, null);
+        }
     }
 
 }

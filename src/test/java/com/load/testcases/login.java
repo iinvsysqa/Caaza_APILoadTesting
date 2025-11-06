@@ -32,15 +32,22 @@ import java.util.List;
 
 
 // To do - Access denied - need to give other user token and get that response so do that after login operator and use his token 
-public class login extends API_WrapperClass{
+public class login extends Baseclass{
+
+			public login(String baseURL) {
+		super(baseURL);
+		// TODO Auto-generated constructor stub
+	}
 
 			Z_LoginUser  login;
 	    
   
-    @Test(priority = 1)
+//    @Test(priority = 1)
     public void Login() throws IOException, CsvException {
     	
-login = new Z_LoginUser(2);
+    	
+login = new Z_LoginUser(Integer.parseInt(loadProp("USERS")));
+		System.out.println(Integer.parseInt(loadProp("USERS")));
     	String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
     	ExtentReport.createdescription(methodName, "<b><I><h2>Sending request without role</h2></I></b>");
     	

@@ -8,11 +8,17 @@ import com.testcases.Product.B_CreateHeaderHierarchy;
 import com.testcases.Product.E_serialEntry;
 
 import wrappers.API_WrapperClass;
+import wrappers.Baseclass;
 
-public class TC_05_SerialEntry extends API_WrapperClass{
+public class TC_05_SerialEntry extends Baseclass{
+public TC_05_SerialEntry(String baseURL) {
+		super(baseURL);
+		// TODO Auto-generated constructor stub
+	}
+
 E_serialEntry serialentry;	
 
-@Test(priority = 5)
+@Test(priority = 4)
 public void serialEntry() {
 	serialentry= new E_serialEntry();
 String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
