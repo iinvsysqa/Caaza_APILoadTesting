@@ -1,0 +1,14 @@
+{
+	"readings": [
+		{
+			"sensorTypeId": "67dcffbbf5806796836e1eef",
+			"value": 111,
+			"timestamp": 1742661813000
+		},
+		{
+			"sensorTypeId": "67dcffbbf5806796836e1eef",
+			"value": 121,
+			"timestamp": 1742469548000
+		}
+	]
+}
